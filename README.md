@@ -18,6 +18,6 @@
 
 ## Документация
 
-[План автоматизации тестировани](https://github.com/netology-code/qa-diploma)
+[План автоматизации тестировани](https://github.com/KleshchenkoSergei/qa-diploma-kleshchenko/blob/main/documents/Plan.md)
 
 
