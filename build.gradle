@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '5.2.1'
+}
+
+group 'netology.ru.netology'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    testImplementation 'mysql:mysql-connector-java:8.0.30'
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    testImplementation 'io.qameta.allure:allure-selenide:2.18.1'
+    testImplementation 'io.rest-assured:rest-assured:5.1.1'
+    testImplementation 'org.postgresql:postgresql:42.3.6'
+    implementation 'org.springframework:spring-jdbc:5.3.22'
+    implementation 'com.codeborne:selenide:6.7.1'
+    implementation 'org.seleniumhq.selenium:selenium-api:4.4.0'
+    implementation 'org.seleniumhq.selenium:selenium-support:4.4.0'
+    implementation "org.slf4j:slf4j-simple:1.7.36"
+
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+
+    systemProperty 'db.url', System.getProperty('db.url', 'jdbc:mysql://192.168.99.100:3306/app')
+
+    systemProperty 'db.user', System.getProperty('db.user', 'app')
+    systemProperty 'db.password', System.getProperty('db.password', 'pass')
+    systemProperty 'sut.url', System.getProperty('sut.url', 'http://localhost:8080')
+}
