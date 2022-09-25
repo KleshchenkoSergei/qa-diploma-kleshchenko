@@ -46,7 +46,8 @@ public class PayYearFieldTest extends TestPreparation{
     public void shouldFailurePaymentYearZero() throws IOException {
         val cardData = getInvalidYearIsZero();
         paymentPage.listCardData(cardData);
-        paymentPage.shouldInvalidExpiredDateNotification();
+        paymentPage.shouldExpiredDatePassNotification();
+
     }
 
     @Test

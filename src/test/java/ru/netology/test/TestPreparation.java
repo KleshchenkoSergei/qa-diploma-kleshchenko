@@ -14,7 +14,7 @@ public class TestPreparation {
 
     @BeforeAll
     static void setUpAll() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterAll

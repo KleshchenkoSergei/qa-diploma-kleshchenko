@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.freefair.lombok' version '5.2.1'
+    id 'io.qameta.allure' version '2.9.6'
 }
 
 group 'netology.ru.netology'
@@ -10,15 +11,28 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+allure {
+    version = '2.16.1'
+    useJUnit5 {
+        version = '2.16.1'
+    }
+}
+
+
 repositories {
     mavenCentral()
+}
+
+configurations {
+    testCompile
 }
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
     testImplementation 'mysql:mysql-connector-java:8.0.30'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
-    testImplementation 'io.qameta.allure:allure-selenide:2.18.1'
+    testImplementation 'io.qameta.allure:allure-selenide:2.16.1'
+    testImplementation 'io.qameta.allure:allure-rest-assured:2.16.1'
     testImplementation 'io.rest-assured:rest-assured:5.1.1'
     testImplementation 'org.postgresql:postgresql:42.3.6'
     implementation 'org.springframework:spring-jdbc:5.3.22'

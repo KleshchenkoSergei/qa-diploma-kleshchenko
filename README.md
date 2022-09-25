@@ -20,6 +20,10 @@
 
 [План автоматизации тестирования](https://github.com/KleshchenkoSergei/qa-diploma-kleshchenko/blob/main/documents/Plan.md)
 
+[Отчет о тестировании](https://github.com/KleshchenkoSergei/qa-diploma-kleshchenko/blob/main/documents/Report.md)
+
+[Отчет об автоматизации](https://github.com/KleshchenkoSergei/qa-diploma-kleshchenko/blob/main/documents/Summary.md)
+
 ## Автоматизация
 
 ### Настройка среды для тестирования
@@ -42,5 +46,10 @@
 В новой вкладке терминала ввести команду:
 - MySQL: 'gradlew clean test "-Ddb.url=jdbc:mysql://192.168.99.100:3306/app"'
 - PostgresSQL: 'gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"'
+
+### Подготовка отчета Allure
+
+После запуска тестов в новой вкладке терминала ввести команду: ./gradlew allureServe.
+Отчет автоматически сформируется и откроется в браузере
 
 
